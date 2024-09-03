@@ -52,3 +52,20 @@ details[open] summary::before {
 footer {
     flex-shrink: 0;
 }
+.contact-links a {
+    display: inline-block;
+    margin: 10px;
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.contact-links a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.btn-lg {
+    font-size: 1.25rem;
+    padding: 15px 30px;
+}
