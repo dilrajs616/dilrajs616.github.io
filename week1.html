@@ -304,29 +304,24 @@
             "config": {
                 "language": {
                     "sourceLanguage": "xx"
-                }
-            }
-        },
-        {
-            "taskType": "translation",
-            "config": {
-                "language": {
-                    "sourceLanguage": "xx",
-                    "targetLanguage": "yy"
-                }
-            }
-        },
-        {
-            "taskType": "tts",
-            "config": {
-                "language": {
-                    "sourceLanguage": "yy"
-                }
+                },
+                "serviceId": "xxxxx--ssssss-d-ddd--dddd",
+                "audioFormat": "wav",
+                "samplingRate": 16000
             }
         }
     ],
-    "pipelineRequestConfig": {
-        "pipelineId" : "xxxx8d51ae52cxxxxxxxx"
+    "inputData": {
+        "input": [
+            {
+                "source": null
+            }
+        ],
+        "audio": [
+            {
+                "audioContent": "{{generated_base64_content}}"
+            }
+        ]
     }
 }</code></pre>
                                 </div>
