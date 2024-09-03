@@ -47,13 +47,20 @@
                 </ul>
             </p>         
             <p class="lead my-4">
-                I read documentation of <a href="https://huggingface.co/docs/transformers/en/model_doc/llama3">Llama 3.1</a>, <a href="https://huggingface.co/docs/transformers/en/model_doc/wav2vec2">Wav2Vec 2.0</a>, <a href="https://ai4bharat.iitm.ac.in/indicwav2vec/">IndicWav2Vec</a>. These all are large language models. We can use these models in our app. These models can be downloaded from <a href="https://huggingface.co/">Huggingface Website.</a> Llama 3.1 is the largest and the most accurate llm model in the world. It is trained on 405 Billion parameters. IndicWav2Vec is specifially trained on Indian Languages like Bhashini AI. IndicWav2Vec supports only 9 Indian languages. But none of these models supported Punjabi language. So it all came to a dead end. 
+                I read documentation of <a href="https://huggingface.co/docs/transformers/en/model_doc/llama3">Llama 3.1</a>, <a href="https://huggingface.co/docs/transformers/en/model_doc/wav2vec2">Wav2Vec 2.0</a>, <a href="https://ai4bharat.iitm.ac.in/indicwav2vec/">IndicWav2Vec</a>. These all are large language models. We can use these models in our app. These models can be downloaded from <a href="https://huggingface.co/">Huggingface Website.</a> Llama 3.1 is the largest and the most accurate LLM model in the world. It is developed by Meta. It is trained on 405 Billion parameters. IndicWav2Vec is specifially trained on Indian Languages like Bhashini AI. IndicWav2Vec supports only 9 Indian languages. But none of these models supported Punjabi language. So it all came to a dead end. 
+            </p>      
+            <p class="lead my-4">
+                However I did found a dataset which had almost 40,000 examples with audio input, punjabi transcript and english translation. This dataset is of 10.9 GBs. Here is the link <a href="https://huggingface.co/datasets/aaparajit02/punjabi-asr">to the dataset. The special thing about this dataset is that it actually takes aud samples from old punjabi newscasters. These are real audio clips by real people.</a><br>
+                In another dataset I got more than 1,25,000 examples with audio input and Punjabi transcript. It is of 60 GBs. This is the <a href="https://huggingface.co/datasets/kdcyberdude/Punjabi_ASR_datasets">link to that dataset</a>. This dataset consists of audio clips by AI voice. It has been collected by using text-to-speech. The downside of this is that the model can be overfitted on this dataset.
             </p>   
             <p class="lead my-4">
                 I also tried to find custom models available on github. I did find one. <a href="https://ohmvikrant.github.io/Punjabi-ASR/">This</a> is the link to one of the articles. However it was not relevant for our project.
+            </p>   
+            <p class="lead my-4">
+                We also tried to implement OpenAI Whisper and Google Transcript API but at the time we did not have their api key as they are paid. They will be further explained in <a href="week3.html">Week 3.</a>
             </p>
             <div class="text-center p-5">
-                <a class="btn btn-primary btn-lg" href="week1.html">Week 1</a>
+                <a class="btn btn-primary btn-lg" href="week3.html">Week 3</a>
             </div>
         </div>
     </section>
