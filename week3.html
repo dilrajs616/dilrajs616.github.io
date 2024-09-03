@@ -50,36 +50,35 @@
             <p class="lead my-4">
                 Google provides a lot of free services that we can simply use in our applications. To use these services, first you have to go to <a href="https://console.cloud.google.com/">Google Console.</a> Create your account and get an api key. This api key can be used to be request all services. Their documentation is pretty clean so you should not have any issue in sign in and getting api key process. <br> Unfortunately Google Transcript api is not available for free. To use this we have to add a payment method. We have to give &#8377;1000 initially. This fee will be refunded in one or two business days. After refund we will also get 300 dollars worth of free credits. Also 60 minutes worth of free trials of Transcript api. <br><br>
                 Now I have a good and a bad news. Good news is that Google provides a <a href="https://cloud.google.com/speech-to-text?hl=en#demo">free demo</a> for Transcript api. You don't need to add payment method to test free demo on their page. Bad news is that this live demo supports only few selected languages and Punjabi is not one of them.
-
-
-link for free "google stt" demo page
-
-Google CloudGoogle Cloud
-Speech-to-Text AI: speech recognition and transcription
-Accurately convert voice to text in over 125 languages and variants using Google AI and an easy-to-use API. (17 kB)
-https://cloud.google.com/speech-to-text?hl=en#section-1
-
-2:51
-link for testing punjabi speech to text accuracy with google translate
-https://translate.google.com/?sl=pa&tl=en&op=translate
-2:53
-api for google speech-to-text
-url : https://speech.googleapis.com/v1p1beta1/speech:recognize
-request body:
-{
-  "audio": {
-    "content": "/* Your audio */"
-  },
-  "config": {
-    "enableAutomaticPunctuation": true,
-    "encoding": "LINEAR16",
-    "languageCode": "es-AR",
-    "model": "default"
-  }
-}
-we just need to put language code as "pa-IN"
-2:55
-as a free alternative i was trying to use "Bhashini AI" which is the official llm for indian languages by indian govt. It will most probably have punjabi support as well. I am still finding it's public api. As soon as I make any progress, I will update in the group
+            </p>
+            <div class="container my-5">
+                <details>
+                    <summary class="bg-white text-black p-3 rounded">
+                        <h5 >API Endpoint and Request Format</h5>
+                    </summary>
+                    <div class="card mt-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Endpoint</h5>
+                            <pre class="bg-light p-3 rounded"><code>https://speech.googleapis.com/v1/speech:recognize?key=${apiKey}</code></pre>
+                            
+                            <h5 class="card-title mt-4">Request Format</h5>
+                            <pre class="bg-light p-3 rounded"><code>{
+    "audio": {
+        "content": "/* Your audio */"
+    },
+    "config": {
+        "enableAutomaticPunctuation": true,
+        "encoding": "LINEAR16",
+        "languageCode": "pa-IN",
+        "model": "default"
+    }
+}</code></pre>
+                        </div>
+                    </div>
+                </details>
+            </div>
+            <p class="lead my-4">
+                Here is a <a href="https://github.com/dilrajs616/khalis/blob/main/simar/Googleapi.js">Sample Code</a> implementing google transcript api.
             </p>
             <div class="text-center p-5">
                 <a class="btn btn-primary btn-lg" href="week1.html">Week 1</a>
