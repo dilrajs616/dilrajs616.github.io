@@ -38,7 +38,41 @@
     <!-- Hero Section -->
     <section class="bg-light text-dark text-align-center text-sm-start">
         <div class="container">
-            
+            <h3 class="mb-0">Google Transcript API</h3>
+            <p class="lead my-4">
+                Google provides a lot of free services that we can simply use in our applications. To use these services, first you have to go to <a href="https://console.cloud.google.com/">Google Console.</a> Create your account and get an api key. This api key can be used to be request all services. Their documentation is pretty clean so you should not have any issue in sign in and getting api key process. <br> Unfortunately Google Transcript api is not available for free. To use this we 
+                Google speech-to-text api requires a billing account to be added. It does not allow us to use it directly. It has a free demo available. I will add the link to free demo page under this text. But the free demo section does not provide demo for all languages and unfortunately Punjabi is not in the available languages for demo. But there is one way to see how accurate Google speech-to-text is with Punjabi. That is by using Google Translate for Gurmukhi. I tested it and it is very accurate with spellings as well
+
+link for free "google stt" demo page
+https://cloud.google.com/speech-to-text?hl=en#section-1
+
+Google CloudGoogle Cloud
+Speech-to-Text AI: speech recognition and transcription
+Accurately convert voice to text in over 125 languages and variants using Google AI and an easy-to-use API. (17 kB)
+https://cloud.google.com/speech-to-text?hl=en#section-1
+
+2:51
+link for testing punjabi speech to text accuracy with google translate
+https://translate.google.com/?sl=pa&tl=en&op=translate
+2:53
+api for google speech-to-text
+url : https://speech.googleapis.com/v1p1beta1/speech:recognize
+request body:
+{
+  "audio": {
+    "content": "/* Your audio */"
+  },
+  "config": {
+    "enableAutomaticPunctuation": true,
+    "encoding": "LINEAR16",
+    "languageCode": "es-AR",
+    "model": "default"
+  }
+}
+we just need to put language code as "pa-IN"
+2:55
+as a free alternative i was trying to use "Bhashini AI" which is the official llm for indian languages by indian govt. It will most probably have punjabi support as well. I am still finding it's public api. As soon as I make any progress, I will update in the group
+            </p>
             <div class="text-center p-5">
                 <a class="btn btn-primary btn-lg" href="week1.html">Week 1</a>
             </div>
