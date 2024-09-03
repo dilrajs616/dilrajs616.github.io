@@ -24,9 +24,6 @@
                         <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="timeline.html">Timeline</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="tests.html">Tested Examples</a>
                     </li>
                     <li class="nav-item">
@@ -41,9 +38,22 @@
     <!-- Hero Section -->
     <section class="bg-light text-dark text-align-center text-sm-start">
         <div class="container">
-            
+            <p class="lead my-4">
+                In second week, our task was to find custom models that will take audio input and give Punjabi transcript as output. For this I started reading research papers about Punjabi ASR. Here are the list of papers that I read. <br> 
+                <ul>
+                    <li><a href="https://www.sciencedirect.com/science/article/pii/S2352340923009265">Real and synthetic Punjabi speech datasets for automatic speech recognition</a></li>
+                    <li><a href="https://www.researchgate.net/publication/283816423_Punjabi_Speech_Recognition_A_Survey">Punjabi Speech Recognition: A Survey</a></li>
+                    <li><a href="https://www.researchgate.net/publication/355891351_Building_an_ASR_System_for_Indian_Punjabi_language_and_its_evaluation_for_Malwa_and_Majha_dialect_Preliminary_Results">Building an ASR System for Indian (Punjabi) language and its evaluation for Malwa and Majha dialect: Preliminary Results</a></li>
+                </ul>
+            </p>         
+            <p class="lead my-4">
+                I read documentation of <a href="https://huggingface.co/docs/transformers/en/model_doc/llama3">Llama 3.1</a>, <a href="https://huggingface.co/docs/transformers/en/model_doc/wav2vec2">Wav2Vec 2.0</a>, <a href="https://ai4bharat.iitm.ac.in/indicwav2vec/">IndicWav2Vec</a>. These all are large language models. We can use these models in our app. These models can be downloaded from <a href="https://huggingface.co/">Huggingface Website.</a> Llama 3.1 is the largest and the most accurate llm model in the world. It is trained on 405 Billion parameters. IndicWav2Vec is specifially trained on Indian Languages like Bhashini AI. IndicWav2Vec supports only 9 Indian languages. But none of these models supported Punjabi language. So it all came to a dead end. 
+            </p>   
+            <p class="lead my-4">
+                I also tried to find custom models available on github. I did find one. <a href="https://ohmvikrant.github.io/Punjabi-ASR/">This</a> is the link to one of the articles. However it was not relevant for our project.
+            </p>
             <div class="text-center p-5">
-                <a class="btn btn-primary btn-lg" href="index.html">Week 1</a>
+                <a class="btn btn-primary btn-lg" href="week1.html">Week 1</a>
             </div>
         </div>
     </section>
