@@ -42,8 +42,30 @@
             <p class="lead my-4">
                 We have completed the testing phase. And Google api has given the most accurate results in testings. So we will be using that in our project. Here are all the <a href="tests.html">Tested Examples.</a>
             </p>
+            <h3 class="mb-0" id="banidb">Using BaniDB locally</h3>
             <p class="lead my-4">
-                Now our target is to complete a demo project before the end of <a href="week5.html">Week 5.</a> We are still planning the demo project. I will make a template today.
+                I thought of running the BaniDB locally on my device. For this, I cloned the GitHub repo: <br> <pre><code>https://github.com/KhalisFoundation/banidb-api</code></pre>
+            </p>
+            <h3 class="mb-0" id="openSSL">Installing openSSL</h3>
+            <p class="lead my-4">
+                But <code>npm install</code> was not working as intended. It kept showing me errors that I frankly did not understand. It was related to <a href="https://www.openssl.org/">OpenSSL</a>. Then I started downloading openSSL on my device. I have a windows device. I could not find a direct source from where I can download openSSL for windows. Then i found a <a href="https://stackoverflow.com/questions/76331564/how-to-install-openssl-from-source-on-windows-10-11">post</a> on stackoverflow from where I found a <a href="https://github.com/openssl/openssl/blob/master/NOTES-WINDOWS.md#quick-start">link</a> to download openSSL on windows. There, first two steps were to install <a href="https://strawberryperl.com/">PERL</a> and <a href="https://www.nasm.us/">NASM</a>. Then I added them to path. Long story short, it didn't work.
+            </p>
+            <h3 class="mb-0" id="planning">Planning Phase</h3>
+            <p class="lead my-5">
+                Me and Simarjot Singh did several online meets where we discussed about the demo project. The layout, flow and tech stack was decided after discussion in these meets. The tech stack that we are using right now is React with TS for frontend and nodeJS for backend. Our work is completely segregated. Frontend is being handled by Simarjot Singh and backend is handled by me.
+            </p>            
+            <h3 class="mb-0" id="demo-project">Making Demo Project</h3>
+            <p class="lead my-5">
+                Initially I started working on this demo project as a fullstack developer. I used ejs as frontend and nodejs for backend. I nearly completed the project this way alone. It did not require a separate frontend framework like react. EJS was good enough. But then I decided that removing views from backend is a better idea because that way this server can also be used as backend for any Khalis app that may want to implement voice search feature. So with this in mind. I made two project. One is full stack web app with frontend done in ejs and backend in nodeJS. The link to that project is given below: <a href="https://github.com/dilrajs616/gurbani_search/"><pre><code>https://github.com/KhalisFoundation/gurbani_search</code></pre></a>
+            </p>
+            <p class="lead my-5">
+                Second project with pure backend and react front end is linked here <a href="https://github.com/dilrajs616/khalis_demo/">Khalis Demo</a>.
+            </p>
+            <p>
+                *Note*: The First Project is done with me only and the second project is a collaboration between me and Simarjot Singh.
+            </p>
+            <p class="lead my-5">
+                Finally I tried to deploy the fullstack web app but there seems to be some kind of error on vercel server side. I will resolve it tomorrow.
             </p>
             <!-- Navigation buttons -->
             <div class="flex justify-center space-x-4 text-center mb-4 bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded">
