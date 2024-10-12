@@ -39,11 +39,45 @@
     <!-- Hero Section -->
     <section class="bg-light text-dark text-align-center text-sm-start">
         <div class="container">
-            <div class="container text-center">
-                <i class="fas fa-tools icon"></i>
-                <h1>Work Under Progress</h1>
-                <p>We are working hard to bring you something awesome. Stay tuned!</p>
+            
+            <h3 class="mb-0" id="">Starting Implementation</h3>
+            <p class="lead my-4">
+                Now finally we could start implementing. But it's not just about implementing the voice search feature into Sikhi To The Max app. We have to make a accessible solution that any developer can use to implement this feature in their app. Most importantly to implement this feature in other apps of Khalis Foundation. We have two major options. First is to make a github repo which developers can clone and copy paste the code in their app. Second app is to make an npm package. Developers can simply install this package and use without worrying about anything. Obviously second option is way better. So the first step is to make an npm package.
+            </p>
+
+            <h3 class="mb-0">Planning NPM Package</h3>
+            <p class="lead my-4">
+                We read the documentation of how to publish an npm package. Turned out it is simpler than it sounds. <a href="https://www.freecodecamp.org/news/how-to-create-and-publish-your-first-npm-package/">Here is the steps to create your own npm package.</a> Then we decided what kind of package are we going to make. Over a meeting me and Simarjot decided that we are going to make a "mic component". As explained <a href="week5.html#table">here</a> this component will take two parameters and return transcript based on input parameters. This component should also be completely customizable so we do not restrict developer in any way. Also it should be compatible with js and ts both. So we decided to make the package using TypeScript. 
+            </p>
+
+            <h3 class="mb-0">Creating NPM Package</h3>
+            <p class="lead my-4">The documentation provided in above paragraph tells how to make an npm package that simply calls a function to print "Hello World". But obviously we need more than that. So here is the link to a <a href="https://chatgpt.com/share/670aae15-5620-8005-86e1-2a5fa79aa044">ChatGPT conversation</a> that explains the steps to create a component using TypeScript and publish it as npm package. We made this <a href="https://github.com/dilrajs616/npm-package">Github Repo.</a> The mic component was successfully created. We tested it by importing it in a local project. It has following customizable variables: </p>
+            <div class="container my-5">
+                <details>
+                    <summary class="bg-white text-black p-3 rounded"><h5 class="mb-0">Customization Of Component</h5>
+                    </summary>
+                    <div class="card mt-3">
+                        <div class="card-body">
+                            <pre class="bg-light p-3 rounded"><code>interface Props {
+    Mic?: React.ElementType;
+    activeMicColor?: string;
+    micDefaultColor?: string;
+    micDefaultBGColor?: string;
+    micActiveBGColor?: string;
+    micSize?: number;
+    borderRadius?: string;
+    searchType: string;
+}
+                            </code></pre>
+                        </div>
+                    </div>
+                </details>
             </div>
+
+            <p class="lead my-4">
+                Just like our Demo Project this project is first sending the audio data to the <a href="week4.html#demo-project">express backend.</a> It simply returns the transcript in a variable called "transcript". The only problem that we are facing right now is with<a href="week4.html#hosting-project"> the hosted backend.</a> It was hosted on Render at <a href="https://gurbani-search.onrender.com/">https://gurbani-search.onrender.com/</a> Response from Render are pretty slow. So we were using localhost for testing. But we can not use either of them in the final npm package. So we have to find alternative way to host the express app. We will explore this further in <a href="week8.html">Week 8.</a>
+            </p>
+
             <!-- Navigation buttons -->
             <div class="flex justify-center space-x-4 text-center mb-4 bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded">
                 <a href="week2.html">
