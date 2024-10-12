@@ -50,22 +50,68 @@
             <p class="lead my-4">
                 But <code>npm install</code> was not working as intended. It kept showing me errors that I frankly did not understand. It was related to <a href="https://www.openssl.org/">OpenSSL</a>. Then I started downloading openSSL on my device. I have a windows device. I could not find a direct source from where I can download openSSL for windows. Then i found a <a href="https://stackoverflow.com/questions/76331564/how-to-install-openssl-from-source-on-windows-10-11">post</a> on stackoverflow from where I found a <a href="https://github.com/openssl/openssl/blob/master/NOTES-WINDOWS.md#quick-start">link</a> to download openSSL on windows. There, first two steps were to install <a href="https://strawberryperl.com/">PERL</a> and <a href="https://www.nasm.us/">NASM</a>. Then I added them to path. Long story short, it didn't work.
             </p>
-            <h3 class="mb-0" id="planning">Planning Phase</h3>
-            <p class="lead my-5">
-                Me and Simarjot Singh did several online meets where we discussed about the demo project. The layout, flow and tech stack was decided after discussion in these meets. The tech stack that we are using right now is React with TS for frontend and nodeJS for backend. Our work is completely segregated. Frontend is being handled by Simarjot Singh and backend is handled by me.
+            <h3 class="" id="planning">Planning Phase</h3>
+            <p class="lead my-4">
+                Me and Simarjot Singh did several online meets where we discussed about the demo project. The layout, flow and tech stack was decided after discussion in these meets. Simarjot Singh, with the help of our mentor Inder Veerji, bought the paid plan of google cloud. So we could use the google-speech-to-text api. Now we have to implement the voice search feature in the Sikhi To The Max app. We can only make changes to the frontend since the app uses BaniDB api as the backend. Obviously we can not put the google-speech-to-text api key in the frontend. So we decided that we will make an intermediate backend. This backend will be made using express. This express app will take audio input and send request to google cloud and return transcript in punjabi. So the frontend will first record audio and send a request to express app that we will develop and after getting the transcript, it will send another request to banidb api to search gurbani. The tech stack that we are using right now is React with TS for frontend and nodeJS for backend. 
             </p>            
             <h3 class="mb-0" id="demo-project">Making Demo Project</h3>
-            <p class="lead my-5">
-                Initially I started working on this demo project as a fullstack developer. I used ejs as frontend and nodejs for backend. I nearly completed the project this way alone. It did not require a separate frontend framework like react. EJS was good enough. But then I decided that removing views from backend is a better idea because that way this server can also be used as backend for any Khalis app that may want to implement voice search feature. So with this in mind. I made two project. One is full stack web app with frontend done in ejs and backend in nodeJS. The link to that project is given below: <a href="https://github.com/dilrajs616/gurbani_search/"><pre><code>https://github.com/KhalisFoundation/gurbani_search</code></pre></a>
+            <p class="lead my-4">
+                For testing purposes, I also decided to make a simple template in express app. The only error I encountered during the development was in calling google api. I was not using the correct request format. Finally I used the following format and it worked:
+
+                <div class="container my-5">
+                    <details>
+                        <summary class="bg-white text-black p-3 rounded">
+                            <h5 >Request Body and Request Format</h5>
+                        </summary>
+                        <div class="card mt-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Request Body</h5>
+                                <pre class="bg-light p-3 rounded"><code>const apiKey = process.env.GOOGLE_API_KEY;
+const apiEndPoint = `https://speech.googleapis.com/v1/speech:recognize?key=${apiKey}`;
+
+// Set up the request payload for the Google Cloud Speech-to-Text API
+const requestBody = {
+    audio: {
+    content: audioData, // The base64-encoded audio data
+    },
+    config: {
+    encoding: "WEBM_OPUS",
+    sampleRateHertz: 48000,
+    languageCode: "pa-IN", // Punjabi language code
+    },
+};
+                                </code></pre>
+                                
+                                <h5 class="card-title mt-4">Request Format</h5>
+                                <pre class="bg-light p-3 rounded"><code>const fetchModule = await fetch();
+const response = await fetchModule(apiEndPoint, {
+    method: "POST",
+    headers: {
+    "Content-Type": "application/json",
+    },
+    body: JSON.stringify(requestBody),
+});
+                                </code></pre>
+                            </div>
+                        </div>
+                    </details>
+                </div>
             </p>
-            <p class="lead my-5">
-                Second project with pure backend and react front end is linked here <a href="https://github.com/dilrajs616/khalis_demo/">Khalis Demo</a>.
+            <p class="lead my-4">
+                On the frontend side we read the <a href="https://banidbpy.readthedocs.io/en/latest/searchtype.html">documentation.</a> We are sending requests using search type 2 (Full Word Gurmukhi). After that we are displaying the Name of bani and ang number.
             </p>
-            <p>
-                *Note*: The First Project is done with me only and the second project is a collaboration between me and Simarjot Singh.
+            <p class="lead my-4">
+                Here is the github repo for the project <a href="https://github.com/dilrajs616/khalis_demo/">Khalis Demo</a>.
             </p>
-            <p class="lead my-5">
-                Finally I tried to deploy the fullstack web app but there seems to be some kind of error on vercel server side. I will resolve it tomorrow.
+            <h3 class="mb-0" id="demo-project">Hosting Demo Project</h3>
+            <p class="lead my-4">
+                Finally I tried to deploy the express app but there seems to be some kind of error on vercel server side. I will resolve it tomorrow.
+            </p>
+            <p class="lead my-4">
+                I was trying to host the express backend on vercel. In the process I even created some new errors in my project. The express router seemed to have stopped working randomly without any reason. It lead to me creating the entire project from scratch again in a new directory. Thankfully it was working fine this time. After all this the thing that I learnt about hosting on Vercel is that <b>Vercel only supports serverless projects.</b>. Although there is official documentation available on how to host express apps on vercel. You can read that documentation by <a href="https://vercel.com/guides/using-express-with-vercel">clicking here.</a> But hosting express on vercel only leads to errors. 
+            </p>
+            <p class="lead my-4">
+                I hosted my express backend on <a href="https://render.com/">Render.</a> Here is the <a href="https://render.com/pricing">Render's Pricing Plans.</a> I used the free plan which allocates 512 MB of RAM and only 0.1 CPU. It also deallocates the resources when we do not send requests to the hosted web service. It is quite inconvinient and slow but it works for the demo for mid term evaluation. Here is the link to the <a href="https://gurbani-search.onrender.com/">Hosted Demo Backend.</a>
             </p>
             <!-- Navigation buttons -->
             <div class="flex justify-center space-x-4 text-center mb-4 bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded">
