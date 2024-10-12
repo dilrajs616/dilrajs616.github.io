@@ -96,9 +96,11 @@ const response = await fetchModule(apiEndPoint, {
                         </div>
                     </details>
                 </div>
+                This code takes one parameter called "audioData" that contains the audio data in base64 form and returns a variable called "transcript" which contains the transcript.
             </p>
+
             <p class="lead my-4">
-                On the frontend side we read the <a href="https://banidbpy.readthedocs.io/en/latest/searchtype.html">documentation.</a> We are sending requests using search type 2 (Full Word Gurmukhi). After that we are displaying the Name of bani and ang number.
+                On the frontend side we read the <a href="https://banidbpy.readthedocs.io/en/latest/searchtype.html">documentation of BaniDB.</a> We are sending requests using search type 2 (Full Word Gurmukhi). After that we are displaying the Name of bani and ang number.
             </p>
             <p class="lead my-4">
                 Here is the github repo for the project <a href="https://github.com/dilrajs616/khalis_demo/">Khalis Demo</a>.
@@ -111,7 +113,7 @@ const response = await fetchModule(apiEndPoint, {
                 I was trying to host the express backend on vercel. In the process I even created some new errors in my project. The express router seemed to have stopped working randomly without any reason. It lead to me creating the entire project from scratch again in a new directory. Thankfully it was working fine this time. After all this the thing that I learnt about hosting on Vercel is that <b>Vercel only supports serverless projects.</b>. Although there is official documentation available on how to host express apps on vercel. You can read that documentation by <a href="https://vercel.com/guides/using-express-with-vercel">clicking here.</a> But hosting express on vercel only leads to errors. 
             </p>
             <p class="lead my-4">
-                I hosted my express backend on <a href="https://render.com/">Render.</a> Here is the <a href="https://render.com/pricing">Render's Pricing Plans.</a> I used the free plan which allocates 512 MB of RAM and only 0.1 CPU. It also deallocates the resources when we do not send requests to the hosted web service. It is quite inconvinient and slow but it works for the demo for mid term evaluation. Here is the link to the <a href="https://gurbani-search.onrender.com/">Hosted Demo Backend.</a>
+                I hosted my express backend on <a href="https://render.com/">Render.</a> Here is the <a href="https://render.com/pricing">Render's Pricing Plans.</a> I used the free plan which allocates 512 MB of RAM and only 0.1 CPU. It also deallocates the resources when we do not send requests to the hosted web service. It is quite inconvinient and slow but it works for the demo for mid term evaluation. Here is the link to the Hosted Demo Backend is here: <a href="https://gurbani-search.onrender.com/">https://gurbani-search.onrender.com/</a>
             </p>
             <!-- Navigation buttons -->
             <div class="flex justify-center space-x-4 text-center mb-4 bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded">
