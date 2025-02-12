@@ -1,4 +1,12 @@
-<h1 id="project-report">Project Report</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation</title>
+</head>
+<body>
+    <h1 id="project-report">Project Report</h1>
 <p>Our goal is to make a model that can categorize websites based on their scraped data. The first problem is that we had non-labelled data. To train our model, we needed a labelled dataset. So we tried clustering websites together based on the keywords that were extracted from their content. But the clusters had too much noise. Our next approach was to use pre-trained models to categorize the text content scraped from websites. We tested two types of models:</p>
 <ol>
 <li><strong>Fine-tuned models from Hugging Face</strong>: These models are faster, smaller, and they require fewer resources. But the downside is that most of them are trained on some specific categories only, so they will not be able to categorize all the websites accurately.</li>
@@ -748,3 +756,5 @@ classifier(sequence_to_classify, candidate_labels)
 </tbody>
 </table>
 <hr>
+</body>
+</html>
