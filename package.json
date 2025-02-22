@@ -1,0 +1,23 @@
+{
+  "name": "dilrajs616.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "vite build && vite-gh-pages"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "vite": "^6.1.1"
+  },
+  "devDependencies": {
+    "vite-plugin-gh-pages": "^1.0.1"
+  }
+}
